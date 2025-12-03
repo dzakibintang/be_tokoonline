@@ -3,7 +3,7 @@
 return [
     'paths' => ['api/*', 'auth/*'], // Sesuaikan dengan rute yang ingin Anda izinkan
     'allowed_methods' => ['*'], // Atau spesifik seperti ['GET', 'POST', 'PUT', 'DELETE']
-    'allowed_origins' => ['https://fe_tokooonline.vercel.app'],// Izinkan origin frontend Anda
+    'allowed_origins' => ['https://fe-tokooonline.vercel.app'],// Izinkan origin frontend Anda
     'allowed_origins_patterns' => [],
     'allowed_headers' => ['*'],
     'exposed_headers' => [],
