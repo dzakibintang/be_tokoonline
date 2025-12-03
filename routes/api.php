@@ -13,6 +13,11 @@ Route::get('/run-migrate', function () {
     Artisan::call('migrate --force');
     return Artisan::output();
 });
+Route::get('/reset-migration', function () {
+    Artisan::call('migrate:fresh --force');
+    return Artisan::output();
+});
+
 
 Route::middleware(['auth:api'])->group(function () {
     Route::get('/riwayat-transaksi', [RiwayatTransaksiController::class, 'index']);
