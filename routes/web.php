@@ -13,10 +13,6 @@ use Illuminate\Support\Facades\Artisan;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/run-migrate', function () {
-    Artisan::call('migrate --force');
-    return Artisan::output();
-});
 
 
 Route::get('/', function () {
