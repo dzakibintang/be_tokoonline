@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
@@ -7,6 +8,12 @@ use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\KeranjangController;
 use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\RiwayatTransaksiController;
+
+Route::get('/run-migrate', function () {
+    Artisan::call('migrate --force');
+    return Artisan::output();
+});
+
 
 Route::middleware(['auth:api'])->group(function () {
     Route::get('/riwayat-transaksi', [RiwayatTransaksiController::class, 'index']);
